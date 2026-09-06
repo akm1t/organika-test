@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тест: органічні речовини</title>
+<meta name="description" content="Онлайн-тест на 20 питань про органічні речовини в житті людини. Без реєстрації: вписав ім’я — і проходь. Оцінка за 12-бальною шкалою, розбір помилок.">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='16' fill='%232563eb'/%3E%3Cellipse cx='50' cy='50' rx='44' ry='18' fill='none' stroke='%232563eb' stroke-width='5'/%3E%3Cellipse cx='50' cy='50' rx='44' ry='18' fill='none' stroke='%232563eb' stroke-width='5' transform='rotate(60 50 50)'/%3E%3Cellipse cx='50' cy='50' rx='44' ry='18' fill='none' stroke='%232563eb' stroke-width='5' transform='rotate(120 50 50)'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="bg-deco" aria-hidden="true">
+  <div class="grid-fade"></div>
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+</div>
+
+<!-- ============ ШАПКА ============ -->
+<header class="topbar">
+  <a class="logo" href="#" data-go="home">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <ellipse cx="50" cy="50" rx="44" ry="17" class="orb-ring"/>
+      <ellipse cx="50" cy="50" rx="44" ry="17" class="orb-ring" transform="rotate(60 50 50)"/>
+      <ellipse cx="50" cy="50" rx="44" ry="17" class="orb-ring" transform="rotate(120 50 50)"/>
+      <circle cx="50" cy="50" r="13" class="orb-core"/>
+    </svg>
+    <span>Органіка<b>.тест</b></span>
+  </a>
+
+  <nav class="topnav">
+    <button class="chipbtn" id="navProfile" data-go="profile" hidden>Мій кабінет</button>
+    <button class="iconbtn" id="themeBtn" title="Світла / темна тема" aria-label="Змінити тему">
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
+      </svg>
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.8 6.8 0 0 0 10.8 10.8z"/>
+      </svg>
+    </button>
+    <div class="user-chip" id="userChip" hidden>
+      <button class="chip-go" type="button" data-go="profile" title="Мій кабінет">
+        <span class="ava" id="userAva">?</span>
+        <span class="uname" id="userName">—</span>
+      </button>
+      <button class="linkbtn" id="logoutBtn">змінити</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ ГОЛОВНА ============ -->
+<section class="screen is-active" id="screen-home">
+  <div class="hero">
+    <div class="hero-text">
+      <span class="pill"><i></i>20 питань · ~7 хвилин</span>
+      <h1>Тест на тему <span class="accent">органічних речовин</span> у житті людини</h1>
+      <p class="byline"><span class="bl-line"></span>by Kratko Tymofii</p>
+      <p class="lead">
+        Перевір, наскільки добре ти розібрався в білках, жирах, вуглеводах і ДНК.
+        Кожне питання з поясненням: після відповіді одразу видно, чому саме так.
+      </p>
+      <div class="cta-row">
+        <button class="btn btn-primary" id="startBtn">
+          Почати тест
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <button class="btn btn-ghost" data-go="auth" id="loginLink">Мої результати</button>
+      </div>
+      <div class="mini-stats">
+        <div><b>20</b><span>питань</span></div>
+        <div><b>12</b><span>бальна шкала</span></div>
+        <div><b>∞</b><span>спроб</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 420" class="atom">
+        <defs>
+          <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"  stop-color="var(--blue)"/>
+            <stop offset="100%" stop-color="var(--blue-soft)"/>
+          </linearGradient>
+        </defs>
+        <g class="spin-a">
+          <ellipse cx="210" cy="210" rx="170" ry="66" fill="none" stroke="url(#ring)" stroke-width="2.5"/>
+          <circle class="dot" cx="380" cy="210" r="9"/>
+        </g>
+        <g class="spin-b" transform="rotate(60 210 210)">
+          <ellipse cx="210" cy="210" rx="170" ry="66" fill="none" stroke="url(#ring)" stroke-width="2.5"/>
+          <circle class="dot d2" cx="40" cy="210" r="7"/>
+        </g>
+        <g class="spin-c" transform="rotate(120 210 210)">
+          <ellipse cx="210" cy="210" rx="170" ry="66" fill="none" stroke="url(#ring)" stroke-width="2.5"/>
+          <circle class="dot d3" cx="380" cy="210" r="8"/>
+        </g>
+        <circle cx="210" cy="210" r="34" class="nucleus"/>
+        <text x="210" y="219" class="nuc-label">C</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <article class="feat reveal">
+      <span class="fico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 4.4-3.4 7.4-8 8.4-4.6-1-8-4-8-8.4V7l8-4z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
+      </span>
+      <h3>Пояснення до кожної відповіді</h3>
+      <p>Помилився — одразу бачиш правильний варіант і коротке пояснення, чому саме він.</p>
+    </article>
+    <article class="feat reveal">
+      <span class="fico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M10 19V5M16 19v-6M22 19H2"/></svg>
+      </span>
+      <h3>Оцінка за 12 балами</h3>
+      <p>У кінці — відсоток, бал і розбір усіх питань, де ти помилився.</p>
+    </article>
+    <article class="feat reveal">
+      <span class="fico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 20c0-3.3 3.6-5.5 8-5.5s8 2.2 8 5.5"/></svg>
+      </span>
+      <h3>Без реєстрації</h3>
+      <p>Вписуєш ім'я — і все. Спроби зберігаються самі: найкращий бал, історія, прогрес.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ПРЕДСТАВСЯ ============ -->
+<section class="screen" id="screen-auth">
+  <div class="auth-card">
+    <span class="pill"><i></i>Перед стартом</span>
+    <h2 class="auth-h">Як тебе підписати?</h2>
+    <p class="auth-sub">Впиши ім'я — щоб результат зберігся і ти бачив свої спроби.
+       Ніяких паролів, пошти й реєстрації.</p>
+
+    <form id="authForm" novalidate>
+      <label class="field">
+        <span>Ім'я та прізвище</span>
+        <input type="text" id="fName" autocomplete="name" placeholder="Напр. Кратко Тимофій" required>
+      </label>
+
+      <label class="field">
+        <span>Група <em>— необов'язково</em></span>
+        <input type="text" id="fGroup" autocomplete="off" placeholder="Напр. МОО">
+      </label>
+
+      <p class="err" id="authErr" hidden></p>
+
+      <button class="btn btn-primary btn-wide" type="submit" id="authSubmit">
+        Почати тест
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="hint-note">Усе зберігається тільки у твоєму браузері на цьому пристрої.</p>
+    </form>
+
+    <div class="known" id="known" hidden>
+      <span class="known-h">Або продовжити як</span>
+      <div class="known-list" id="knownList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ТЕСТ ============ -->
+<section class="screen" id="screen-quiz">
+  <div class="quiz-head">
+    <div class="qmeta">
+      <span class="qcount">Питання <b id="qNow">1</b> / <span id="qTotal">20</span></span>
+      <span class="qtimer" id="qTimer">00:00</span>
+    </div>
+    <div class="qbar"><div class="qbar-fill" id="qBar"></div></div>
+  </div>
+
+  <div class="qcard" id="qCard">
+    <h2 class="qtext" id="qText">—</h2>
+    <div class="opts" id="qOpts"></div>
+    <div class="explain" id="qWhy" hidden></div>
+    <div class="qfoot">
+      <span class="qscore" id="qScore">Правильних: 0</span>
+      <button class="btn btn-primary" id="qNext" hidden>Далі</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ РЕЗУЛЬТАТ ============ -->
+<section class="screen" id="screen-result">
+  <div class="res-card">
+    <div class="ring-wrap">
+      <svg viewBox="0 0 200 200" class="ring">
+        <circle cx="100" cy="100" r="86" class="ring-bg"/>
+        <circle cx="100" cy="100" r="86" class="ring-fg" id="ringFg"/>
+      </svg>
+      <div class="ring-mid">
+        <span class="ring-num" id="resPct">0%</span>
+        <span class="ring-sub" id="resRaw">0 / 20</span>
+      </div>
+    </div>
+
+    <div class="res-body">
+      <span class="grade-badge" id="resGrade">—</span>
+      <h2 id="resTitle">—</h2>
+      <p class="lead" id="resText">—</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" id="againBtn">Пройти ще раз</button>
+        <button class="btn btn-ghost" data-go="profile">Мій кабінет</button>
+        <button class="btn btn-ghost" id="reviewBtn">Розбір помилок</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="review" id="review" hidden></div>
+</section>
+
+<!-- ============ КАБІНЕТ ============ -->
+<section class="screen" id="screen-profile">
+  <div class="prof-head">
+    <div>
+      <span class="pill"><i></i>Особистий кабінет</span>
+      <h2 id="profName">—</h2>
+      <p class="lead" id="profGroup">—</p>
+    </div>
+    <button class="btn btn-primary" id="profStart">Пройти тест</button>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat"><span class="sv" id="stBest">—</span><span class="sl">найкращий бал</span></div>
+    <div class="stat"><span class="sv" id="stLast">—</span><span class="sl">остання спроба</span></div>
+    <div class="stat"><span class="sv" id="stTries">0</span><span class="sl">усього спроб</span></div>
+    <div class="stat"><span class="sv" id="stAvg">—</span><span class="sl">середній відсоток</span></div>
+  </div>
+
+  <h3 class="sect-h">Історія спроб</h3>
+  <div class="history" id="history"></div>
+
+  <h3 class="sect-h">Хто ще проходив на цьому пристрої</h3>
+  <div class="board" id="board"></div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span>Тест до презентації «Значення органічних речовин у житті людини»</span>
+  <span class="dot-sep">·</span>
+  <span>Кратко Тимофій, І курс, група МОО, МТЕФК</span>
+</footer>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="assets/js/questions.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
